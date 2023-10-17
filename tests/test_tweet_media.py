@@ -72,7 +72,7 @@ class MediaTest(BaseTestCase):
         self.assert_element_visible(Media.container)
         self.assert_element_visible(Media.image)
 
-        image_url = self.get_image_url(Media.image + ' img')
+        image_url = self.get_image_url(f'{Media.image} img')
         self.assertIn(url, image_url)
 
     @parameterized.expand(gif)
@@ -83,8 +83,8 @@ class MediaTest(BaseTestCase):
 
         url = self.get_attribute('source', 'src')
         thumb = self.get_attribute('video', 'poster')
-        self.assertIn(gif_id + '.mp4', url)
-        self.assertIn(gif_id + '.jpg', thumb)
+        self.assertIn(f'{gif_id}.mp4', url)
+        self.assertIn(f'{gif_id}.jpg', thumb)
 
     @parameterized.expand(video_m3u8)
     def test_video_m3u8(self, tweet, thumb):
@@ -93,7 +93,7 @@ class MediaTest(BaseTestCase):
         self.assert_element_visible(Media.container)
         self.assert_element_visible(Media.video)
 
-        video_thumb = self.get_attribute(Media.video + ' img', 'src')
+        video_thumb = self.get_attribute(f'{Media.video} img', 'src')
         self.assertIn(thumb, video_thumb)
 
     @parameterized.expand(gallery)
