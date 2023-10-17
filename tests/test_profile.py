@@ -34,7 +34,7 @@ class ProfileTest(BaseTestCase):
             (location, Profile.location),
             (website, Profile.website),
             (joinDate, Profile.joinDate),
-            (mediaCount + " Photos and videos", Profile.mediaCount)
+            (f"{mediaCount} Photos and videos", Profile.mediaCount),
         ]
 
         for text, selector in tests:
@@ -72,5 +72,5 @@ class ProfileTest(BaseTestCase):
     @parameterized.expand(banner_image)
     def test_banner_image(self, username, url):
         self.open_nitter(username)
-        banner = self.find_element(Profile.banner + ' img')
+        banner = self.find_element(f'{Profile.banner} img')
         self.assertIn(url, banner.get_attribute('src'))

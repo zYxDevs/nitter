@@ -48,5 +48,5 @@ class ThreadTest(BaseTestCase):
         self.compare_first_word(after, Conversation.after)
 
         for i, reply in enumerate(self.find_elements(Conversation.thread)):
-            selector = Conversation.replies + f" > div:nth-child({i + 1})"
+            selector = f"{Conversation.replies} > div:nth-child({i + 1})"
             self.compare_first_word(replies[i], selector)
