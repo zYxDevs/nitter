@@ -93,7 +93,7 @@ class TweetTest(BaseTestCase):
         tweet = Tweet()
         self.open_nitter(f'{username}/status/{tid}')
         self.assert_exact_text(fullname, tweet.fullname)
-        self.assert_exact_text('@' + username, tweet.username)
+        self.assert_exact_text(f'@{username}', tweet.username)
         self.assert_exact_text(date, tweet.date)
         self.assert_text(text, tweet.text)
 
