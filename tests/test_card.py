@@ -52,10 +52,10 @@ class CardTest(BaseTestCase):
     @parameterized.expand(card)
     def test_card(self, tweet, title, description, destination, large):
         self.open_nitter(tweet)
-        c = Card(Conversation.main + " ")
+        c = Card(f"{Conversation.main} ")
         self.assert_text(title, c.title)
         self.assert_text(destination, c.destination)
-        self.assertIn('/pic/', self.get_image_url(c.image + ' img'))
+        self.assertIn('/pic/', self.get_image_url(f'{c.image} img'))
         if len(description) > 0:
             self.assert_text(description, c.description)
         if large:
@@ -66,7 +66,7 @@ class CardTest(BaseTestCase):
     @parameterized.expand(no_thumb)
     def test_card_no_thumb(self, tweet, title, description, destination):
         self.open_nitter(tweet)
-        c = Card(Conversation.main + " ")
+        c = Card(f"{Conversation.main} ")
         self.assert_text(title, c.title)
         self.assert_text(destination, c.destination)
         if len(description) > 0:
@@ -75,10 +75,10 @@ class CardTest(BaseTestCase):
     @parameterized.expand(playable)
     def test_card_playable(self, tweet, title, description, destination):
         self.open_nitter(tweet)
-        c = Card(Conversation.main + " ")
+        c = Card(f"{Conversation.main} ")
         self.assert_text(title, c.title)
         self.assert_text(destination, c.destination)
-        self.assertIn('/pic/', self.get_image_url(c.image + ' img'))
+        self.assertIn('/pic/', self.get_image_url(f'{c.image} img'))
         self.assert_element_visible('.card-overlay')
         if len(description) > 0:
             self.assert_text(description, c.description)
