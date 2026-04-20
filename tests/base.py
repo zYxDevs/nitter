@@ -3,35 +3,35 @@ from seleniumbase import BaseCase
 
 class Card(object):
     def __init__(self, tweet=''):
-        card = tweet + '.card '
-        self.link = card + 'a'
-        self.title = card + '.card-title'
-        self.description = card + '.card-description'
-        self.destination = card + '.card-destination'
-        self.image = card + '.card-image'
+        card = f'{tweet}.card '
+        self.link = f'{card}a'
+        self.title = f'{card}.card-title'
+        self.description = f'{card}.card-description'
+        self.destination = f'{card}.card-destination'
+        self.image = f'{card}.card-image'
 
 
 class Quote(object):
     def __init__(self, tweet=''):
-        quote = tweet + '.quote '
-        namerow = quote + '.fullname-and-username '
-        self.link = quote + '.quote-link'
-        self.fullname = namerow + '.fullname'
-        self.username = namerow + '.username'
-        self.text = quote + '.quote-text'
-        self.media = quote + '.quote-media-container'
-        self.unavailable = quote + '.quote.unavailable'
+        quote = f'{tweet}.quote '
+        namerow = f'{quote}.fullname-and-username '
+        self.link = f'{quote}.quote-link'
+        self.fullname = f'{namerow}.fullname'
+        self.username = f'{namerow}.username'
+        self.text = f'{quote}.quote-text'
+        self.media = f'{quote}.quote-media-container'
+        self.unavailable = f'{quote}.quote.unavailable'
 
 
 class Tweet(object):
     def __init__(self, tweet=''):
-        namerow = tweet + '.tweet-header '
-        self.fullname = namerow + '.fullname'
-        self.username = namerow + '.username'
-        self.date = namerow + '.tweet-date'
-        self.text = tweet + '.tweet-content.media-body'
-        self.retweet = tweet + '.retweet-header'
-        self.reply = tweet + '.replying-to'
+        namerow = f'{tweet}.tweet-header '
+        self.fullname = f'{namerow}.fullname'
+        self.username = f'{namerow}.username'
+        self.date = f'{namerow}.tweet-date'
+        self.text = f'{tweet}.tweet-content.media-body'
+        self.retweet = f'{tweet}.retweet-header'
+        self.reply = f'{tweet}.replying-to'
 
 
 class Profile(object):
