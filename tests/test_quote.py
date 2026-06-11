@@ -30,7 +30,7 @@ class QuoteTest(BaseTestCase):
     @parameterized.expand(text)
     def test_text(self, tweet, fullname, username, text):
         self.open_nitter(tweet)
-        quote = Quote(Conversation.main + " ")
+        quote = Quote(f"{Conversation.main} ")
         self.assert_text(fullname, quote.fullname)
         self.assert_text(username, quote.username)
         self.assert_text(text, quote.text)
@@ -38,20 +38,20 @@ class QuoteTest(BaseTestCase):
     @parameterized.expand(image)
     def test_image(self, tweet, url):
         self.open_nitter(tweet)
-        quote = Quote(Conversation.main + " ")
+        quote = Quote(f"{Conversation.main} ")
         self.assert_element_visible(quote.media)
-        self.assertIn(url, self.get_image_url(quote.media + ' img'))
+        self.assertIn(url, self.get_image_url(f'{quote.media} img'))
 
     @parameterized.expand(gif)
     def test_gif(self, tweet, url):
         self.open_nitter(tweet)
-        quote = Quote(Conversation.main + " ")
+        quote = Quote(f"{Conversation.main} ")
         self.assert_element_visible(quote.media)
-        self.assertIn(url, self.get_attribute(quote.media + ' source', 'src'))
+        self.assertIn(url, self.get_attribute(f'{quote.media} source', 'src'))
 
     @parameterized.expand(video)
     def test_video(self, tweet, url):
         self.open_nitter(tweet)
-        quote = Quote(Conversation.main + " ")
+        quote = Quote(f"{Conversation.main} ")
         self.assert_element_visible(quote.media)
-        self.assertIn(url, self.get_image_url(quote.media + ' img'))
+        self.assertIn(url, self.get_image_url(f'{quote.media} img'))
