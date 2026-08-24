@@ -38,6 +38,12 @@ proc userTweetsAndRepliesUrl(id: string; cursor: string): ApiReq =
     oauth: apiUrl(graphUserTweetsAndRepliesV2, restIdVars % [id, cursor, "20"], userTweetsFieldToggles, skipTid=true)
   )
 
+proc userArticlesUrl(id: string; cursor: string): ApiReq =
+  result = ApiReq(
+    cookie: apiUrl(graphUserArticles, userArticlesVars % [id, cursor], userTweetsFieldToggles),
+    oauth: apiUrl(graphUserArticlesV2, restIdVars % [id, cursor, "20"], userTweetsFieldToggles)
+  )
+
 proc tweetDetailUrl(id, cursor: string; mode = Relevance): ApiReq =
   return apiReq(graphTweet, tweetVars % [id, cursor, $mode])
   # let cookieVars = tweetDetailVars % [id, cursor]
@@ -112,6 +118,7 @@ proc getGraphUserTweets*(id: string; kind: TimelineKind; after=""): Future[Profi
       of TimelineKind.tweets: userTweetsUrl(id, cursor)
       of TimelineKind.replies: userTweetsAndRepliesUrl(id, cursor)
       of TimelineKind.media: mediaUrl(id, cursor)
+      of TimelineKind.articles: userArticlesUrl(id, cursor)
     js = await fetch(url)
   result = parseGraphTimeline(js, after)
 

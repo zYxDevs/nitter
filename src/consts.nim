@@ -16,6 +16,8 @@ const
   graphUserTweetsAndReplies* = "qUpkZU6eN8MbtQb7rC_pYg/UserTweetsAndReplies"
   graphUserMedia* = "VyudDWQnr9vJNw7GasFz2g/UserMedia"
   graphUserMediaV2* = "WK111rbR0vM0ZX4lyZCYjw/MediaTimelineV2"
+  graphUserArticles* = "ZmMjUyrTpwYfTGAdylEyMw/UserArticlesTweets"
+  graphUserArticlesV2* = "PsGixN38UZz2RheyayNB5Q/UserProfileArticlesTimelineQuery"
   graphTweet* = "OZMbEnEa96AN8Pq6HyTWdw/ConversationTimeline"
   graphTweetDetail* = "XMOz5h24KAZ86qKffKTLdQ/TweetDetail"
   graphTweetResult* = "xYOrBQoTlfKJJPsX76MZEw/TweetResultByIdQuery"
@@ -145,6 +147,13 @@ const
   "count": 20,
   "includePromotedContent": false,
   "withCommunity": true,
+  "withVoice": true
+}""".replace(" ", "").replace("\n", "")
+
+  userArticlesVars* = """{
+  "userId": "$1", $2
+  "count": 20,
+  "includePromotedContent": false,
   "withVoice": true
 }""".replace(" ", "").replace("\n", "")
 
