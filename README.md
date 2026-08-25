@@ -5,9 +5,7 @@
 [![License](https://img.shields.io/github/license/zedeus/nitter?style=flat)](#license)
 
 > [!NOTE]
-> Running a Nitter instance now requires real accounts, since Twitter removed the previous methods. \
-> This does not affect users. \
-> For instructions on how to obtain session tokens, see [Creating session tokens](https://github.com/zedeus/nitter/wiki/Creating-session-tokens).
+> On 24 August 2026 cease and desist letters were sent by X Corp. demanding a permanent takedown of Nitter instances and the project's repository.
 
 A free and open source alternative Twitter front-end focused on privacy and
 performance. \
@@ -209,3 +207,5 @@ lines). If you're running the Docker image, you can do this:
 
 Feel free to join our [Matrix channel](https://matrix.to/#/#nitter:matrix.org).
 You can email me at zedeus@pm.me if you wish to contact me personally.
+
+For legal inquiries, contact legal@poast.org
